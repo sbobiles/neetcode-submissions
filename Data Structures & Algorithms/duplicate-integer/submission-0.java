@@ -1,0 +1,20 @@
+class Solution {
+    public boolean hasDuplicate(int[] nums) {
+
+        boolean dup = false;
+
+        //optimal solution
+        Map<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < nums.length; i++){
+            if(map.containsValue(nums[i])){
+                dup = true;
+            }
+            else{
+                map.put(i, nums[i]);
+            }
+        }
+
+        return dup;
+    }
+}
